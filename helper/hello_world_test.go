@@ -8,6 +8,14 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestMain(m *testing.M) {
+	//berfore
+	fmt.Println("Before Unit Test")
+	m.Run()
+	fmt.Println("After Unit Test")
+	//after
+}
+
 func TestSkip(t *testing.T) {
 	if runtime.GOOS == "windows" {
 		t.Skip("Can not run in Windows")
