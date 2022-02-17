@@ -8,6 +8,18 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestSubTest(t *testing.T) {
+	t.Run("Andry", func(t *testing.T) {
+		result := HelloWorld("Andry")
+		assert.Equal(t, "Hello Andryx", result, "Result must be 'Hello Andry'")
+	})
+
+	t.Run("Ompusunggu", func(t *testing.T) {
+		result := HelloWorld("Andry")
+		assert.Equal(t, "Hello Andryx", result, "Result must be 'Hello Andry'")
+	})
+}
+
 func TestMain(m *testing.M) {
 	//berfore
 	fmt.Println("Before Unit Test")
