@@ -9,6 +9,34 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+func BenchmarkTable(b *testing.B) {
+	bencmark := []struct {
+		name    string
+		request string
+	}{
+		{
+			name:    "Andry",
+			request: "Andry",
+		},
+		{
+			name:    "Halomoan",
+			request: "Halomoan",
+		},
+		{
+			name:    "Ompusunggu",
+			request: "Ompusunggu",
+		},
+	}
+
+	for _, benchmark := range bencmark {
+		b.Run(benchmark.name, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				HelloWorld(benchmark.request)
+			}
+		})
+	}
+}
+
 func BenchmarkSub(b *testing.B) {
 	b.Run("Andry", func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
